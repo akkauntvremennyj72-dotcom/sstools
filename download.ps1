@@ -3,7 +3,7 @@
 [console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # Куда качаем все утилиты
-$targetFolder = "C:\OpeningUtils"
+$targetFolder = "C:\ss"
 
 # Создаем папку, если её нет
 if (-not (Test-Path $targetFolder)) {
@@ -40,7 +40,7 @@ $files = @(
     [PSCustomObject]@{ Name = "KernelLiveDump++"; FileName = "KernelLiveDump++.exe"; URL = "https://detect.ac/tool/KernelLiveDump++" }
 )
 
-# Инициализируем статусы (на английском во избежание кракозябр)
+# Инициализируем статусы
 $statuses = @{}
 foreach ($f in $files) { $statuses[$f.Name] = "Pending..." }
 
